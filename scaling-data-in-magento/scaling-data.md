@@ -1,4 +1,11 @@
-# Scaling Data in Magento
+footer:
+slidenumbers: false
+
+# [fit] Scalable
+## and
+## [fit] Highly Available Data
+## in
+## [fit] Magento
 
 ![](images/session-scew.png)
 
@@ -14,7 +21,7 @@
 
 ### Focused seasonal trends such as Cyber Monday have the capacity to melt tin
 
-![original](images/3265813515_5584814db8_o.jpg)
+![](images/3265813515_5584814db8_o.jpg)
 
 ^The nature of marketing or customer trends is that they will drive traffic in a short time window. This results in a very focused peak in resource load in the hardware.
 
@@ -25,7 +32,7 @@
 
 ![](images/10921733615_56f0835096_o.jpg)
 
-^It is often very common to simply add more and bigger hardware to solve the problem.
+^It is often very common to simply add more and bigger hardware to solve the problem. But even this has limitations.
 
 ---
 
@@ -34,7 +41,7 @@
 
 ![](images/8210286870_04537767e4_k.jpg)
 
-^PHP may not be the bottleneck as back pressure from slow service calles can manifest as slow PHP and apache or nginx processes and increased resource consumption.
+^PHP may not be the bottleneck but as back pressure from slow service calls can manifest as slow PHP and apache or nginx processes and increased resource consumption.
 
 ---
 
@@ -47,7 +54,7 @@
 
 # ~~I'm not a DBA~~
 
-^I have plenty of experience but I would never consider myself a database expert. But I have learned how to divolve a problem down to it's smallest manifestation. Then I have a list of great people to whom I can go for help. That said I'm not afraid to role up my sleeves and work through the problem.
+^I have plenty of experience but I would never consider myself a database expert. But I have learned how to devolve a problem down to it's smallest manifestation. Then I have a list of great people to whom I can go for help. That said I'm not afraid to role up my sleeves and work through the problem.
 
 ---
 
@@ -60,7 +67,7 @@
 
 ---
 
-### You have to learn to question the current state?
+### You have to learn to find the right questions first!
 
 ![](https://farm1.staticflickr.com/62/202872717_a8a4799419_o.jpg)
 
@@ -76,11 +83,11 @@
 
 ---
 
-# So you have your store up and running...
+# So, you have your store up and running...
 
 ---
 
-# All web servers are scaled and running nicely...
+# All web servers are configured and running nicely...
 
 ---
 
@@ -104,7 +111,7 @@
 
 ---
 
-# You can't do anything with out *instrumentation*
+# You can't do anything without *instrumentation*
 
 ![](images/6930598830_475c14676b_k.jpg)
 
@@ -137,8 +144,18 @@
 
 ---
 
-## Scaling, high availability and redundancy
+## Performance is a moving target
+### But if you aim for it, you stand a greater chance of hitting it
+
+---
+
+## Performance, scaling, high availability and redundancy
 ### All related but separate things
+
+---
+
+## Performance:
+### The ability to function quickly
 
 ---
 
@@ -157,22 +174,6 @@
 
 ---
 
-# In a mission critical application
-## *all these need to be balanced*
-
----
-
-# In commerce
-## conversion rates are directly effected the decisions made in these areas
-
----
-
-# Technology should *facilitate* conversion!
-
-^As soon as you have a technical problem that effects conversion then you need to get some time and budget to fox it. It may not be visible to the client but you need to help them see the value in this work.
-
----
-
 # So where should we start?
 
 ---
@@ -180,6 +181,10 @@
 ## The Apache / Nginx process is blocking
 ### waiting on PHP...
 ### PHP is waiting on the Database...
+
+---
+
+# 8 of the many steps to performance
 
 ---
 
@@ -216,7 +221,7 @@
 ---
 
 ## Use Full Page Cache
-### State the obvious but it protects the database at peak loads
+### Stating the obvious but it protects the database at peak loads
 
 ---
 
@@ -240,13 +245,13 @@
 
 ---
 
-# Step 4
+# Step 3
 ## Ensure all tables are *INNODB*
 ## Some legacy code will have created MYISAM
 
 ![original](images/session-bg.png)
 
-^This avoids table level locking and row level locks are more atomic preventing locking from being such a problem.
+^This avoids table level locking as row level locks are more atomic preventing locking from being such a problem.
 
 ---
 
@@ -257,7 +262,7 @@
 
 ---
 
-# Step 5
+# Step 4
 ## Transaction level
 
 ![original](images/session-bg.png)
@@ -273,7 +278,7 @@
 
 ---
 
-# Step 6
+# Step 5
 ## *Reduce* transaction size
 
 ![original](images/session-bg.png)
@@ -281,13 +286,13 @@
 ---
 
 ## Your transaction is not committed?
-### Your waiting for external service calls or none critical writes...
+### You're waiting for external service calls or none critical writes...
 
 ^You can think about splitting the critical transaction from these other operations. This means that the transaction locks are shorter and fewer collisions will happen.
 
 ---
 
-# Step 7
+# Step 6
 ## Reducing *non-critical* write operations
 
 ![original](images/session-bg.png)
@@ -348,7 +353,7 @@
 
 ---
 
-# Step 8
+# Step 7
 ## Asynchronous *write* operations
 
 ![original](images/session-bg.png)
@@ -363,7 +368,7 @@
 
 ---
 
-# Step 9
+# Step 8
 ## Clustering & replication
 
 ![original](images/session-bg.png)
@@ -375,6 +380,8 @@
 
 ![](images/2414578959_fd897cfb1c_o.jpg)
 
+^This is not about high avilability this is to achieve greater write throughput by off-loading the read  operations.
+
 ---
 
 ## Use standard MySQL replication
@@ -383,7 +390,7 @@
 ---
 
 ## Ensure you have compression enabled!
-### Or you will flood you internal network
+### Or you will flood you're internal network
 
 ---
 
@@ -441,9 +448,42 @@
 
 ---
 
-# Cluster & replication options
+# 3 Goals of High Availability
+
+---
+
+# Goal 1
+## Zero points of failure? *Plan for failure!*
 
 ![original](images/session-bg.png)
+
+---
+
+# Goal 2
+## *Automated* recovery of services and data
+
+![original](images/session-bg.png)
+
+---
+
+# Goal 3
+## Network segmentation will have zero impact on performance
+
+![original](images/session-bg.png)
+
+---
+
+# Cluster & replication options
+
+---
+
+# RedHat Cluster Interface
+
+---
+
+# MySQL Fabric
+
+^MySQL Fabric provides a framework for managing farms of MySQL servers. MySQL Fabric provides two services that can be used individually or in combination. High Availability is built on top of MySQL Replication to provide automated failure detection and failover. On the failure of a master, a slave is automatically promoted and writes from the application routed to the correct servers.
 
 ---
 
@@ -452,17 +492,18 @@
 ---
 
 ## Replicator
-### A multi-threaded replication process over MySQL
+### A multi-threaded replication process over MySQL and other databases
 
 ---
 
-## Connection manager
-### A smart connection manager that can filter based on query content
+## Smart Connection manager
+### A smart connection manager that can route connections based on query content
 
 ---
 
 ## High availability
 ### Connection manager provides active service discovery
+### Magento connects to a local port 3306
 
 ---
 
@@ -495,6 +536,11 @@
 ---
 
 ## One setting does not rule them all
+### Use your own metrics to define the best settings for your application
+
+---
+
+## One connection does not fit all tasks
 ### Use many tuned connections for specific operations types
 
 ^Use a different connection for admin function to client operations. Use a very specific connection for indexing operations.
@@ -508,6 +554,38 @@
 
 ## Sharding
 ### The smart connector can re-write the query on the fly
+### You will need to introduce UUIDs for key tables
+
+---
+
+
+# Real Numbers
+
+![original](images/session-bg.png)
+
+---
+
+# A project using these recommendations
+
+---
+
+## ~ €850,000 revenue per day
+
+---
+
+## ~ 23,000 orders per day
+
+---
+
+## ~ 2000 orders per hour at peak
+
+---
+
+## These are still small numbers
+
+---
+
+## They will be much higher this holiday season
 
 ---
 
