@@ -1,4 +1,4 @@
-footer: #inviqaDevDay
+footer: \#inviqaDevDay
 slidenumbers: true
 
 # Document Driven Development
@@ -87,11 +87,19 @@ slidenumbers: true
 
 ---
 
-# What is the ubiquitous language of an API
+# What is the ubiquitous language to specify an API
 
 ---
 
 # HTTP 1.1
+
+---
+
+# What is the ubiquitous language of your business
+
+---
+
+# NOT HTTP!
 
 ---
 
@@ -102,3 +110,7 @@ slidenumbers: true
 ---
 
 ## API Blueprint
+
+
+
+"“Model the problem domain and the solution will take care of itself” — David West, Object Thinking"
