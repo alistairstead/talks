@@ -390,7 +390,7 @@ slidenumbers: false
 ---
 
 ## Ensure you have compression enabled!
-### Or you will flood you're internal network
+### Or you will flood your internal network
 
 ---
 
@@ -557,7 +557,6 @@ slidenumbers: false
 ### You will need to introduce UUIDs for key tables
 
 ---
-
 
 # Real Numbers
 
