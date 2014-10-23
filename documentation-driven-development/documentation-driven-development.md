@@ -1,4 +1,4 @@
-footer: \#inviqaDevDay
+footer: \#inviqadevday
 slidenumbers: false
 
 ## _**D**_ocumentation _**D**_riven
@@ -12,13 +12,13 @@ slidenumbers: false
 
 ---
 
-## Ubiquitous language
+### Ubiquitous language
 
 ^We use a common language developed with business domain. We keep implementation detail away from our definition by example.
 
 ---
 
-## Continuous conversation
+### Continuous conversation
 
 ^This conversation is described as input and output. Question and answer from a human perspective. We are driving the understanding of a business domain where the highest level consumer of the result is a human being.
 
@@ -28,25 +28,21 @@ slidenumbers: false
 
 ---
 
-## What if the consumer of our software is a machine?
+### What if the consumer of our software is a machine?
 
 ---
 
-## What if your software has an API?
+### What if your software has an API?
 
 ^Yes this will include business logic and that logic would be defined and model with conventional BDD examples. After all your domain layer is not your API.
 
 ---
 
-## Your API is presentation / UI
+### Your API is presentation / UI
 
 ---
 
-## Your API is a representation
-
----
-
-## It is an implementation detail
+### It is an implementation detail
 
 ---
 
@@ -65,7 +61,7 @@ slidenumbers: false
 
 ---
 
-## API have lots of important implementation detail
+### API have lots of important implementation detail
 
 ---
 
@@ -77,42 +73,42 @@ slidenumbers: false
 
 ---
 
-## Is it because it is technical that we treat it differently?
-
----
-
-## The API is an interface to the application
+### Is it because the API is technical that we tend to blur the layers?
 
 ^ It is the entry point, it is a system boundary that is very important
 
 ---
 
-## Documentation for FREE...
-### Thats a statment you have heard, right?
-
-^ That sounds useful for creating documentation for how the API works...
+### Using Gherkin describe and to drive the UI
 
 ---
 
-## Regression suite for FREE...
+### Documentation for FREE...
+#### Thats a statment you have heard, right?
+
+^ That sounds useful for creating documentation for how the API works... API documentation should be deliverble number 1.
+
+---
+
+### Regression suite for FREE...
 
 ^ That sounds useful to ensure our API works...
 
 ---
 
-## Should we use Gherkin?
+### Should we use Gherkin?
 
 ---
 
-## Use Mink + Goutte?
+### Use Mink + Goutte?
 
 ---
 
-## Anyone done that?
+### Has anyone done that?
 
 ---
 
-## What is the ubiquitous language to specify an API?
+### What is the ubiquitous language to specify an API_?_
 
 ---
 
@@ -120,7 +116,7 @@ slidenumbers: false
 
 ---
 
-## What is the ubiquitous language of your business
+### What is the ubiquitous language of your business_?_
 
 ---
 
@@ -128,8 +124,8 @@ slidenumbers: false
 
 ---
 
-## HTTP is a text based protocol
-### So lets use that to our advantage
+### HTTP is a text based protocol
+#### So lets use that to our advantage
 ^Quote from the RFC
 
 ---
@@ -143,8 +139,8 @@ slidenumbers: false
 
 ---
 
-## Blueprint
-### Markdown format designed for _API_ definition
+### Blueprint
+#### Markdown format designed for _API_ definition
 
 ---
 
@@ -243,7 +239,7 @@ Resource description
 
 ---
 
-## _Automate_ the conversation
+### _Automate_ the conversation
 
 ---
 
@@ -337,13 +333,13 @@ Simply return the request back to you so that you
 
 ---
 
-## Great, we can now describe our API
+### Great, we can now describe our API
 
 ^ Using the ubiquitous language of an API...
 
 ---
 
-## And we can use this to drive testing the UI...
+### And we can use this to drive testing the UI...
 
 ---
 
@@ -351,29 +347,30 @@ Simply return the request back to you so that you
 
 ---
 
-## We have very brittle validation tools
+### We have very brittle validation tools
 
 ---
 
-## The format and structure is important
+### The format and structure is important
 
 ---
 
-## The data is not important!
+### The data is not important!
 
 ---
 
-## The data is the _**implementation detail!**_
+### The data is the
+## _**implementation detail!**_
 
 ^ The implementation detail that earlier we said we did not want to leak into our testing and specification
 
 ---
 
-## How can we decouple our structure from the data?
+### How can we decouple our structure from the data?
 
 ---
 
-## JSON Scheme can help
+### JSON Scheme can help
 #### It can, honest!
 
 ---
@@ -437,21 +434,21 @@ Simply return the request back to you so that you
 
 ---
 
-## Im not saying don't use Gherkin!
+### Im not saying don't use Gherkin!
 
 ---
 
-## I'm saying use it in the right place
+### I'm saying use it in the right place
 
 ^The right layer of your application or the correct context
 
 ---
 
-## Drive your core domain with BDD scenarios
+### Drive your core domain with BDD scenarios
 
 ---
 
-## Drive your interface with the appropriate tool
+### Drive your interface with the appropriate tool
 
 ---
 
