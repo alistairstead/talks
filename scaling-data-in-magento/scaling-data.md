@@ -1,19 +1,19 @@
-footer:
+footer: \#magetitans
 slidenumbers: false
 
 ## __*Scalable*__
-### __*and*__
+### __and__
 ## __*Highly Available Data*__
-### __*in*__
+### __in__
 ## Magento
 
 ![](images/session-scew.png)
 
 ---
 
-## Alistair Stead
-### CTO ![](images/session-logo.png)
-### *@alistairstead*
+### Alistair Stead
+#### CTO ![](images/session-logo.png)
+#### *@alistairstead*
 
 ![](images/Alistair.jpeg)
 
@@ -299,7 +299,7 @@ slidenumbers: false
 
 ---
 
-## Logging can be done somewhere else
+#### Logging can be done somewhere else
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -311,18 +311,7 @@ slidenumbers: false
         <controller_action_postdispatch>
             <observers><log><type>disabled</type></log></observers>
         </controller_action_postdispatch>
-        <customer_login>
-            <observers><log><type>disabled</type></log></observers>
-        </customer_login>
-        <customer_logout>
-            <observers><log><type>disabled</type></log></observers>
-        </customer_logout>
-        <sales_quote_save_after>
-            <observers><log><type>disabled</type></log></observers>
-        </sales_quote_save_after>
-        <checkout_quote_destroy>
-            <observers><log><type>disabled</type></log></observers>
-        </checkout_quote_destroy>
+        ...
     </events>
 </frontend>
 ```
@@ -427,7 +416,7 @@ slidenumbers: false
 
 ---
 
-## Module config.xml
+#### Example module config.xml
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
