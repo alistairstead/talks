@@ -1,25 +1,25 @@
 footer:
 slidenumbers: false
 
-# [fit] Scalable
-## and
-## [fit] Highly Available Data
-## in
-## [fit] Magento
+## __*Scalable*__
+### __*and*__
+## __*Highly Available Data*__
+### __*in*__
+## Magento
 
 ![](images/session-scew.png)
 
 ---
 
-# Alistair Stead
+## Alistair Stead
 ### CTO ![](images/session-logo.png)
-### @alistairstead
+### *@alistairstead*
 
 ![](images/Alistair.jpeg)
 
 ---
 
-### Focused seasonal trends such as Cyber Monday have the capacity to melt tin
+### *Focused seasonal trends such as Cyber Monday have the capacity to melt tin*
 
 ![](images/3265813515_5584814db8_o.jpg)
 
@@ -27,8 +27,8 @@ slidenumbers: false
 
 ---
 
-# Server capacity can of course be expanded
-## *hardware is inexpensive...*
+## *Server capacity can of course be expanded*
+### *hardware is inexpensive...*
 
 ![](images/10921733615_56f0835096_o.jpg)
 
@@ -36,8 +36,8 @@ slidenumbers: false
 
 ---
 
-## Back pressure
-### from lower systems will block PHP
+## *Back pressure*
+### *from lower systems will block PHP*
 
 ![](images/8210286870_04537767e4_k.jpg)
 
@@ -45,89 +45,89 @@ slidenumbers: false
 
 ---
 
-# When the DB is the bottleneck
-## *adding more servers will only make it worse*
+## When the DB is the bottleneck
+### *adding more servers will only make it worse*
 
 ^The symptoms will simply be exacerbated by adding more hardware, facilitating greater utilisation of the already saturated services.
 
 ---
 
-# ~~I'm not a DBA~~
+## __*~~I'm not a DBA~~*__
 
 ^I have plenty of experience but I would never consider myself a database expert. But I have learned how to devolve a problem down to it's smallest manifestation. Then I have a list of great people to whom I can go for help. That said I'm not afraid to role up my sleeves and work through the problem.
 
 ---
 
-# When your store is popular you have to ~~cope~~ *learn*
+### When your store is popular you have to ~~cope~~ *learn*
 
 ---
 
-# Don't just copy what is on **stack**overflow
-## identify your exact problem.
+### Don't just copy what is on *stack*overflow
+### identify your exact problem.
 
 ---
 
-### You have to learn to find the right questions first!
+### *You have to learn to find the right questions first!*
 
 ![](https://farm1.staticflickr.com/62/202872717_a8a4799419_o.jpg)
 
 ---
 
-# You have to find people that can help!
+### You have to find people that can help!
 
 ---
 
-# After all engineering is not a solitary affair
+### *Engineering is not a solitary persuit*
 
 ![](images/4730932250_be9ffb039b_o.jpg)
 
 ---
 
-# So, you have your store up and running...
+### So, you have your store up and running...
 
 ---
 
-# All web servers are configured and running nicely...
+### All web servers are configured and running nicely...
 
 ---
 
-# You have Magento configured for optimal running...
+### You have Magento configured for optimal running...
 
 ---
 
-# Now you have more traffic and things are slowing down...
+### Now you have more traffic and things are slowing down...
 
 ---
 
-# What do you do?
+## __*What do you do?*__
 
 ![](images/3623768629_955cfaedca_o.jpg)
 
 ---
 
-# Well... ..?
+## __*Well... ..?*__
 
 ![](images/3623768629_955cfaedca_o.jpg)
 
 ---
 
-# You can't do anything without *instrumentation*
+### You can't do anything without *instrumentation*
 
 ![](images/6930598830_475c14676b_k.jpg)
 
 ---
 
-# Development instrumentation
-## *identify problems early*
+## Development instrumentation
+### *identify problems early*
 
 ---
 
-# Production instrumentation
-## *will show the real problems*
+## Production instrumentation
+### *will show the real problems*
 
 ---
 
-# We have metrics that say the DB is a slowing us down
+### *We have metrics that say the DB is a slowing us down*
 
 ![](images/88003222_c875cfda73_o.jpg)
 
@@ -135,61 +135,61 @@ slidenumbers: false
 
 ---
 
-# We need to take some actions...
+### __*We need to take some actions...*__
 
 ---
 
-# But first...
-## a brief interlude
+## But first...
+### __*a brief interlude*__
 
 ---
 
-## Performance is a moving target
-### But if you aim for it, you stand a greater chance of hitting it
+### *Performance is a moving target*
+#### But if you aim for it, you stand a greater chance of hitting it
 
 ---
 
-## Performance, scaling, high availability and redundancy
-### All related but separate things
+### *Performance, scaling, high availability and redundancy*
+#### All related but separate things
 
 ---
 
-## Performance:
-### The ability to function quickly
+## *Performance*
+#### The ability to function quickly
 
 ---
 
-## Scaling:
-### The ability to function within acceptable limits as the number of users increases
+## *Scaling*
+#### The ability to function within acceptable limits as the number of users increases
 
 ---
 
-## High availability:
-### The ability to facilitate continuous function following and during failure
+## *High availability*
+#### The ability to facilitate continuous function following and during failure
 
 ---
 
-## Redundancy:
-### Duplication of critical systems so as to have no single point of failure
+## *Redundancy*
+#### Duplication of critical systems so as to have no single point of failure
 
 ---
 
-# So where should we start?
+### __*So where should we start?*__
 
 ---
 
-## The Apache / Nginx process is blocking
-### waiting on PHP...
-### PHP is waiting on the Database...
+### The Apache / Nginx process is blocking
+#### *waiting on PHP...*
+#### *PHP is waiting on the Database...*
 
 ---
 
-# 8 of the many steps to performance
+## *8* of the *many* steps to performance
 
 ---
 
-# Step 1
-## Make your queries *FAST*er
+## *Step 1*
+### Make your queries *FAST*er
 
 ![original](images/session-bg.png)
 
@@ -197,57 +197,57 @@ slidenumbers: false
 
 ---
 
-# MySQL Indexes
-## Identify missing indexes for a query and speed up the result
+## MySQL Indexes
+#### Identify missing indexes for a query and speed up the result
 
 ---
 
-# Re-design queries
-## Not recommended for core queries but sometimes you have to...
-## *However send a patch back to Magento for inclusion in the next release*
+## Re-design queries
+#### Not recommended for core queries but sometimes you have to...
+#### *However send a patch back to Magento for inclusion in the next release*
 
 ---
 
-# Step 2
-## *Cache* as much as you can
+## *Step 2*
+### *Cache* as much as you can
 
 ![original](images/session-bg.png)
 
 ---
 
 ## Expand query cache as much as you can
-### Can you fit your entire DB into memory?
+#### Can you fit your entire DB into memory?
 
 ---
 
 ## Use Full Page Cache
-### Stating the obvious but it protects the database at peak loads
+#### Stating the obvious but it protects the database at peak loads
 
 ---
 
 ## Use proxy or edge caches
-### If you don't need to execute PHP don't
+#### If you don't need to execute PHP don't
 
 ---
 
 ## At some point your cache *MUST* expire
-### On highly merchandised sites then cache is simply not as effective
+#### On highly merchandised sites then cache is simply not as effective
 
 ---
 
 ## But this is all for *read* operations...
-### What about *writing* data?
+#### __*What about writing data?*__
 
 ---
 
 ## Lock wait timeout...
-### Have you seen this in your exception log?
+#### Have you seen this in your exception log?
 
 ---
 
-# Step 3
-## Ensure all tables are *INNODB*
-## Some legacy code will have created MYISAM
+## *Step 3*
+### Ensure all tables are *INNODB*
+### Some legacy code will have created MYISAM
 
 ![original](images/session-bg.png)
 
@@ -255,22 +255,22 @@ slidenumbers: false
 
 ---
 
-## ~~Increase `lock_wait_timeout`~~
-### Don't this is an anti-pattern
+### ~~Increase `lock_wait_timeout`~~
+#### Don't this is an anti-pattern
 
 ^For the admin functions you may need higher values but for customers you want to exit on a lock earlier rather than wait for a lock that may not be released in time anyway.
 
 ---
 
-# Step 4
-## Transaction level
+## *Step 4*
+### Transaction level
 
 ![original](images/session-bg.png)
 
 ---
 
-## Use READ COMMITTED
-### instead of the MySQL default of REPEATABLE READ
+### Use `READ COMMITTED`
+#### instead of the MySQL default of `REPEATABLE READ`
 
 ^Read committed is an isolation level that guarantees that any data read was committed at the moment is read. It simply restricts the reader from seeing any intermediate, uncommitted, 'dirty' read. IT makes no promise whatsoever that if the transaction re-issues the read, will find the Same data, data is free to change after it was read.
 
@@ -278,28 +278,28 @@ slidenumbers: false
 
 ---
 
-# Step 5
-## *Reduce* transaction size
+## *Step 5*
+### *Reduce* transaction size
 
 ![original](images/session-bg.png)
 
 ---
 
 ## Your transaction is not committed?
-### You're waiting for external service calls or none critical writes...
+#### You're waiting for external service calls or none critical writes...
 
 ^You can think about splitting the critical transaction from these other operations. This means that the transaction locks are shorter and fewer collisions will happen.
 
 ---
 
-# Step 6
-## Reducing *non-critical* write operations
+## *Step 6*
+### Reducing *non-critical* write operations
 
 ![original](images/session-bg.png)
 
 ---
 
-## Logging can be done somewhere elese
+## Logging can be done somewhere else
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -331,30 +331,30 @@ slidenumbers: false
 
 ---
 
-# HTTP 101
-## *Only modify state on HTTP POST*
-### #TIP 1. This simple rule can help so many aspects of scaling
+## HTTP 101
+#### *Only modify state on HTTP POST*
+#### #TIP 1. This simple rule can help so many aspects of scaling
 
 ^This is how HTTP is meant to work. Developers can BREAK this quite easily if you let them but if you respect it then your application can work well with other technology
 
 ---
 
 ## Off-load functionality to third parties
-### logging and tracking can be handled else where
+#### logging and tracking can be handled elsewhere
 
 ^If you can identify appropriate functionality to off-load to 3rd parties then you should. This is a philosophy that can be applied everywhere. If you don't have to build and maintain it don't
 
 ---
 
 ## Move data and logic to the client
-### If state has not changed then the client should know all it needs to know
+#### *If state has not changed then the client should know all it needs to know*
 
 ^We have a module that moves the cart functionality to the client and is only updated on POST.
 
 ---
 
-# Step 7
-## Asynchronous *write* operations
+## *Step 7*
+### Asynchronous *write* operations
 
 ![original](images/session-bg.png)
 
@@ -363,20 +363,20 @@ slidenumbers: false
 ---
 
 ## Use job queues
-### non-crtical write operations can be pushed to the queue
-### You then have to work with eventual consistency
+#### *non-crtical write operations can be pushed to the queue*
+#### You then have to work with eventual consistency
 
 ---
 
-# Step 8
-## Clustering & replication
+## *Step 8*
+### Clustering & replication
 
 ![original](images/session-bg.png)
 
 ---
 
-# Introduce a slave database
-## Replicate data to the slave database
+## *Introduce a slave database*
+#### Replicate data to the slave database
 
 ![](images/2414578959_fd897cfb1c_o.jpg)
 
@@ -385,43 +385,43 @@ slidenumbers: false
 ---
 
 ## Use standard MySQL replication
-### Enable binary logging
+#### *Enable binary logging*
 
 ---
 
 ## Ensure you have compression enabled!
-### Or you will flood your internal network
+#### *Or you will flood your internal network*
 
 ---
 
 ## Use *`MIXED`* Binary logging format
-### for quicker replication
+#### for quicker replication
 
 ---
 
 ## *`STATEMENT`* Binary logging
-### Can cause PK clashes... in our experience...
+#### Can cause PK clashes... in our experience...
 
 ^In our experience this can be a real problem
 
 ---
 
 ## Single threaded replication
-### Prior to MySQL 5.6 you only have one thread
+#### Prior to MySQL 5.6 you only have one thread
 
 ^Slave lag can be a real problem at high write volumes
 
 ---
 
 ## Split read from write operations
-### Across the cluster
+#### Across the cluster
 
 ^You can dramatically increase throughput by sending read operations to many machines and writing to a single master DB
 
 ---
 
 ## Write, read consistency
-### Can be resolved with module level connections
+#### Can be resolved with module level connections
 
 ^Replication slave lag can be a problem especially with some payment modules. To resolve this you can use module level connection overrides.
 
@@ -448,176 +448,175 @@ slidenumbers: false
 
 ---
 
-# 3 Goals of High Availability
+## __*3 Goals of High Availability...*__
 
 ---
 
-# Goal 1
-## Zero points of failure? *Plan for failure!*
+## *Goal 1*
+### Zero points of failure?
+### *Plan for failure!*
 
 ![original](images/session-bg.png)
 
 ---
 
-# Goal 2
-## *Automated* recovery of services and data
+## *Goal 2*
+### *Automated* recovery of services and data
 
 ![original](images/session-bg.png)
 
 ---
 
-# Goal 3
-## Network segmentation will have zero impact on performance
+## *Goal 3*
+### Network segmentation will have zero impact on performance
 
 ![original](images/session-bg.png)
 
 ---
 
-# Cluster & replication options
+## Cluster & replication options
 
 ---
 
-# RedHat Cluster Interface
+## RedHat Cluster Interface
 
 ---
 
-# MySQL Fabric
+## MySQL Fabric
 
 ^MySQL Fabric provides a framework for managing farms of MySQL servers. MySQL Fabric provides two services that can be used individually or in combination. High Availability is built on top of MySQL Replication to provide automated failure detection and failover. On the failure of a master, a slave is automatically promoted and writes from the application routed to the correct servers.
 
 ---
 
-# Tungsten ![inline 75%](images/continuent.png)
+## Tungsten ![inline 75%](images/continuent.png)
 
 ---
 
 ## Replicator
-### A multi-threaded replication process over MySQL and other databases
+#### *A multi-threaded replication process over MySQL and other databases*
 
 ---
 
-## Smart Connection manager
-### A smart connection manager that can route connections based on query content
+## Smart connection manager
+#### *A smart connection manager that can route connections based on query content*
 
 ---
 
 ## High availability
-### Connection manager provides active service discovery
-### Magento connects to a local port 3306
+#### *Connection manager provides active service discovery*
+#### *Magento connects to a local port 3306*
 
 ---
 
 ## Connection Manager
-### runs on every server and allows the master to float around the cluster
+#### *Runs on every server and allows the master to float around the cluster*
 
 ^The connection manager is the reason we chose Tungsten
 
 ---
 
 ## Hot production upgrades
-### MySQL can be configured or upgraded with *zero* downtime
+#### *MySQL can be configured or upgraded with zero downtime*
 
 ---
 
 ## The Master Database
-### Can be moved to any node without config changes or downtime
+#### *Can be moved to any node without config changes or downtime*
 
 ---
 
 ## Service discovery
-### All servers connect to their own *Connection Manager*
+#### *All servers connect to their own Connection Manager*
 
 ---
 
-# Next steps...
+## __*Next steps...*__
 
 ![original](images/session-bg.png)
 
 ---
 
 ## One setting does not rule them all
-### Use your own metrics to define the best settings for your application
+#### *Use your own metrics to define the best settings for your application*
 
 ---
 
 ## One connection does not fit all tasks
-### Use many tuned connections for specific operations types
+#### *Use many tuned connections for specific operations types*
 
 ^Use a different connection for admin function to client operations. Use a very specific connection for indexing operations.
 
 ---
 
 ## Alternate replication architecture
-### Fan-in for example allowing multiple masters
+#### *Fan-in for example allowing multiple masters*
 
 ---
 
 ## Sharding
-### The smart connector can re-write the query on the fly
-### You will need to introduce UUIDs for key tables
+#### *The smart connector can re-write the query on the fly*
+#### *You will need to introduce UUIDs for key tables*
 
 ---
 
-# Real Numbers
+## __*Real Numbers*__
 
 ![original](images/session-bg.png)
 
 ---
 
-# A project using these recommendations
+### __*~ €850,000 revenue per day*__
 
 ---
 
-## ~ €850,000 revenue per day
+### __*~ 23,000 orders per day*__
 
 ---
 
-## ~ 23,000 orders per day
+### __*~ 2000 orders per hour at peak*__
 
 ---
 
-## ~ 2000 orders per hour at peak
+### __*These are still small numbers!*__
 
 ---
 
-## These are still small numbers
+## __They will be *much higher* this holiday season__
 
 ---
 
-## They will be much higher this holiday season
-
----
-
-# Gotchas...
+# __*Gotchas...*__
 
 ![original](images/session-bg.png)
 
 ---
 
-## Turn off security updates because your cluster will *FAIL*
+## Turn off automatic security updates
+#### your cluster will *FAIL*
 
 ^If all your database machines restart at the same time then your cluster will be in a state from which it can not recover. You should be placing your cluster in maintenance mode before running this level of updates.
 
 ---
 
-## Ensure enough RAM for the transaction size
+## Allocate enough RAM
+#### *heavy merchendising can yield large transaction size*
 
 ^Sites with high admin modifications will have large index transaction sizes don't be surprised when this exceeds the amount of RAM you allocated. Prior to EE 1.13.* and 1.14.* then the index event queue can result in huge transactions that can exceed 8GB.
 
 ---
 
-## Do you have enough file descriptors
-### This will be limited ensure you have enough
+## Do you have enough file descriptors?
+#### This will be limited unless you configure the system
 
 ^This is a really low level system element and depending upon your hosting partner then this may be something they will help with but if you manage your own infrastructure, ensure that this is updated accordingly.
 
 ---
 
 ## Thank you!
-# Questions?
+# __*Questions?*__
 
 ![original](images/session-bg.png)
 
 ---
 
-# http://bit.ly/sdinmage
+### http://bit.ly/*sdinmage*
