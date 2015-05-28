@@ -3,7 +3,7 @@ slidenumbers: false
 
 # [fit] __Handling Complexity__
 
-![](images/session-bg.png)
+![](images/bg.png)
 
 ---
 
@@ -11,13 +11,13 @@ slidenumbers: false
 # Cynefin
 ## __Pronounced ku-nev-in__
 
-![](images/session-bg.png)
+![](images/bg.png)
 
 ^ A brief introduction to Cynefin.
 
 ---
 
-![fit](/Users/ali/Desktop/Screen Shot 2015-05-28 at 08.18.53.png)
+![fit](images/cynefin.png)
 
 ^ Perspectives: Deliverables, Projects, People Interaction
 
@@ -31,7 +31,7 @@ slidenumbers: false
 * Out of the box Magento
 * Working individually
 
-![fit right](/Users/ali/Desktop/Screen Shot 2015-05-28 at 08.18.53.png)
+![fit right](images/cynefin.png)
 
 ---
 
@@ -43,7 +43,7 @@ slidenumbers: false
 * Rebuilding existing website features with Symfony
 * Reaching team decisions
 
-![fit right](/Users/ali/Desktop/Screen Shot 2015-05-28 at 08.18.53.png)
+![fit right](images/cynefin.png)
 
 ---
 
@@ -56,7 +56,7 @@ slidenumbers: false
 * Missing requirements
 * Negotiating with disagreeing parties
 
-![fit right](/Users/ali/Desktop/Screen Shot 2015-05-28 at 08.18.53.png)
+![fit right](images/cynefin.png)
 
 ---
 
@@ -67,7 +67,7 @@ slidenumbers: false
 * Startup that make assumptions regarding out of the box Magento
 * Inconsolable differences
 
-![fit right](/Users/ali/Desktop/Screen Shot 2015-05-28 at 08.18.53.png)
+![fit right](images/cynefin.png)
 
 ---
 
@@ -77,7 +77,7 @@ slidenumbers: false
 * Building simple eCommerce from scratch
 * Warring parties
 
-![fit right](/Users/ali/Desktop/Screen Shot 2015-05-28 at 08.18.53.png)
+![fit right](images/cynefin.png)
 
 ---
 
@@ -231,4 +231,4 @@ Identify priorities.
 ## Thank you!
 # __*Questions?*__
 
-![](images/session-bg.png)
+![](images/bg.png)
