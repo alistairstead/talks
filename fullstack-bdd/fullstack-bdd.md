@@ -33,6 +33,8 @@ slidenumbers: false
 
 ^ I'm going to make the wild assumption that we all in this room are technologists? We seek to solve problems with technology.
 
+^ This means to some extent that we fixate on technical solutions.
+
 ---
 
 # [fit] **⚠︎** This is somewhat dangerous
@@ -43,7 +45,7 @@ slidenumbers: false
 
 ---
 
-# [fit] _Tool_ selection
+# [fit] 🔨 _Tool_ selection
 
 ^ Select tools that make your life easier, that inspire you to deliver the right solution and facilitate the creation of great code. That protect you from poor code architecture that promote good practices.
 
@@ -51,7 +53,7 @@ slidenumbers: false
 
 # [fit] `mocha.js | jasmine.js | cucumber.js | ...`
 
-^ There are many tools to JavaScript and Node engineers to accomplish our goals but I'm going to focus on cucumber.js as I think that is possibly the most maligned and miss represented.
+^ There are many tools to JavaScript and Node engineers to accomplish our BDD / TDD goals but I'm going to focus on cucumber.js as I think that is possibly the most maligned and miss represented from my experience.
 
 ---
 
@@ -131,13 +133,19 @@ module.exports = function () {
 
 # [fit] Using gherkin for **translation**
 
+^ A better way to use this tool is to use it as a point at which you translate between the business and the development team. Working collaboratively to understand the details of a requirement is far more effective.
+
 ---
 
 # [fit] Using gherkin to define a **ubiquitous language**
 
+^ Use this document as the place where ongoing conversation and debate happens.
+
 ---
 
 # [fit] Using gherkin to describe the **domain**
+
+^ Model the domain through scenarios and examples.
 
 ---
 
@@ -154,6 +162,8 @@ Feature: Break slow service requests early
     When I make a request of service "http://service.dev/will/succeed"
     Then the callback should be invoked with the response "Success"
 ```
+
+^ In this form even though it is a technical example you can start to see the domain come to the fore.
 
 ---
 
@@ -178,19 +188,41 @@ Feature: Break slow service requests early
   });
 ```
 
+^ The development team glue these steps to the code that shows how the code will be used through the form of exercising the code.
+
 ---
 
 # [fit] Development workflow
 
+^ How does this all fit into the development workflow?
+
+^ It starts the conversation and facilitates the ongoing dialogue with all the stakeholders.
+
 ---
 
-# [fit] BDD + TDD
+# [fit] BDD & TDD
 
-^ Is it a purely technical component, the unit tests may be enough?
+![](http://cdn.meme.am/instances/500x/55794716.jpg)
+
+^ BDD describes the business domain and the external behaviors
+
+^ TDD drives the development of the code components.
+
+^ If it a purely technical component, the unit tests may be enough?
+
+---
+
+## BDD ~ Business domain
+##
+## TDD ~ Developer domain
+
+^ These different practices are facilitated by different tools but are born of the same principles.
 
 ---
 
 # [fit] RED -> GREEN -> REFACTOR♻︎
+
+^ Adopting them into your workflow you would ideally fall into a steady cycle of small iteration of approximately 20 minutes where you write a failing test, write only enough code to make this test pass, then you go back and refactor your code.
 
 ---
 
@@ -200,7 +232,9 @@ Feature: Break slow service requests early
 
 ---
 
-# [fit] Design
+# [fit] ✏️ Design
+
+^ I'm not suggesting you resort to UML and model your code on a white board. What I'm talking about here is emergent desgin and the ability refactor allows that.
 
 ^ Refactoring gives you the opportunity to design your code to build that elegant maintainable solution you hoped you would make first time round. Lets be honest look at the code you wrote last week, would you write it the same way this week after another 7 days of learning? However do you feel you can change it easily and achieve what you want with confidence?
 
@@ -215,9 +249,9 @@ Feature: Break slow service requests early
 
 ---
 
-# [fit] SOLID principles[^1]
+# [fit] SOLID principles[^2]
 
-[!1]:http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod
+[!2]:http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod
 
 ^ The SOLID principles were originally codified by Robert “Uncle Bob” Martin, bringing a set of existing design principles together in a more easily-understandable format. Ultimately the goal of SOLID is clean code that can be easily re-used.
 
@@ -229,7 +263,7 @@ Feature: Break slow service requests early
 
 ---
 
-# [fit] Accidental complexity
+# [fit] Beware accidental complexity
 
 ^ Simply throwing all of these concepts are you project will likely result in one scenario, complexity. Abstraction for abstractions sake. Use of design patterns because that is what this opinionated person stood up and said were good.
 
@@ -252,6 +286,8 @@ Feature: Break slow service requests early
 
 ^ These rules give you the opportunity ask "Why?" and to assess the code you have crafted. To ensure that you are prioritizing the principles over the tools.
 
+^ Duplication is not simply code duplication but shared knowledge or duplication of concepts.
+
 ---
 
 # [fit] Write just enough tests
@@ -266,7 +302,9 @@ Feature: Break slow service requests early
 
 ---
 
-# [fit] Build small components
+# [fit] Build tiny module[^3]
+
+[^3]:@substack http://substack.net/how_I_write_modules
 
 ^ This is the node philosophy. Before that it was the UNIX philosophy
 
@@ -274,21 +312,29 @@ Feature: Break slow service requests early
 
 # [fit] Write clean code
 
+^ This isn't about defining getter and setters.
+
+^ It is not about using a specific programming paradigm OO or Functional. The same applies across all of this.
+
 ---
 
-# [fit] Write code with a clear API
+# [fit] Write code with a clear intent
 
 ^ All code has an external surface a UI it exposes methods and it should make sense
+
 ^  UX / DX / UI / API
-^ Readability, Readability, Readability - Ref caveman coder presentation
+
+^ Readability, Readability, Readability - Defend against the Caveman Coder (Kitson Kelly)
 
 ---
 
 # [fit] Identify duplication and complexity
 
+^ Don't forget this applies to your tests as well as your code.
+
 ---
 
-# [fit] **Common smells**
+# [fit] **Common smells** 💩
 
 ---
 
@@ -306,7 +352,7 @@ Feature: Break slow service requests early
 
 ---
 
-# Brittle scenarios tied to a specific UI or API
+# Brittle scenarios
 
 ```gherkin
 Feature: Example feature
@@ -322,6 +368,12 @@ Feature: Example feature
     And I click 'submit'
     Then I should seen 'Thank you for registering'
 ```
+
+^ Why may this be brittle? A: It is tied to a specific UI
+
+^ This is a scenario where "re-use" is causing people to bring implementation detail to the top rathe than push it down into the supporting glue code.
+
+^ Developers should be building the glue to the code and connecting the domain to the outside world
 
 ---
 
@@ -341,7 +393,7 @@ Feature: Example feature
 
 # [fit] There is a cost!
 
-^ If you simply follow examples and commit some of the error I described here. It will not only add costs initially but also longer term maintenance costs that will likely exceed the value.
+^ If you simply follow examples and commit some of the errors I described here. It will not only add costs initially but also longer term maintenance costs that will likely exceed the value.
 
 ---
 
@@ -353,17 +405,180 @@ Feature: Example feature
 
 # [fit] Constantly pay down the technical debt
 
+^ Refactoring is at the heart of the workflow and the ability to change the inner functionality while being confident that you are maintaining the external behavior
+
 ---
 
 # [fit] Automation
+
+^ Testing and validation of acceptance criteria that you have developed in collaboration with the all the stakeholders.
 
 ---
 
 # [fit] Regression tests
 
+^ Free regression testing being built as you work not as an after thought.
+
 ---
 
 # [fit] Documentation
+
+^ Free documentation that lives and grows with your code. It stays in sync and its value is maintained without significant additional investment.
+
+---
+
+# [fit] How do you apply this at different levels?
+
+^ Okay we are at fullstack so how do you apply this to the different layers of the stack
+
+---
+
+# [fit] Use different Worlds...
+
+* Domain
+* API
+* UI
+
+^ You can build your features through all the layers developing them using the same guiding steps.
+
+^ You glue the implementation to these contexts
+
+---
+
+### World
+
+```javascript
+// features/support/world.js
+var world = process.env.WORLD;
+if (!world) {
+  console.warn("Please set $WORLD before running. Defaulting to 'domain'...");
+  world = 'domain';
+}
+
+module.exports = function () {
+  var worldSource = './' + world + '_world';
+  this.World = require(worldSource).World;
+};
+```
+
+---
+
+### UI World
+
+```javascript
+// features/support/ui_world.js
+...
+function UiWorld(ready) {
+  var shop = browser.params.shop;
+  var self = {
+    setPrice: shop.setPrice,
+    scan: function (scannedQuantity, callback) {
+      var quantityInput = element(by.css('#quantity'));
+      var scanButton = element(by.css('#scan'));
+      browser.get('/');
+      quantityInput.clear();
+      quantityInput.sendKeys(scannedQuantity);
+      scanButton.click().then(callback);
+    },
+    totalIs: function (expectedTotal, callback) {
+      var total = element(by.css('#total'));
+      ...
+    }
+  };
+  ...
+}
+module.exports = { World: UiWorld };
+```
+
+---
+
+### API World
+
+```javascript
+// features/support/api_world.js
+...
+function ApiWorld(ready) {
+  var shop = new Shop();
+  var webApp = new WebApp(shop);
+  var self = {
+    ...
+    scan:
+      function (scannedQuantity, callback) {
+        request(webApp)
+          .post('/basket/cucumber')
+          .send({ quantity: scannedQuantity })
+          .expect(201)
+          .end(callback);
+      },
+    totalIs:
+      function (expectedTotal, callback) {
+        request(webApp)
+          .get('/basket')
+          .expect(200)
+          .expect(function (res) {
+            assert.equal(expectedTotal, res.body.total);
+          })
+          .end(callback);
+      }
+  };
+  ...
+}
+module.exports = { World: ApiWorld };
+```
+
+---
+
+### Domain World
+
+```javascript
+// features/support/domain_world.js
+...
+function ShopWorld(ready) {
+  var shop = new Shop();
+  var self = {
+    ...
+    scan: shop.scan,
+    totalIs:
+      function (expectedTotal, callback) {
+        shop.calculateTotal(function (err, actualTotal) {
+          assert.equal(actualTotal, expectedTotal);
+          callback();
+        });
+      }
+  };
+  ...
+}
+module.exports = { World: ShopWorld };
+```
+
+---
+
+### Steps
+
+```javascript
+module.exports = function () {
+
+  this.Given(/^a Cucumber costs \$(\d+)$/, function (price, callback) {
+    this.setPrice(parseInt(price), callback);
+  });
+
+  this.When(/^I buy (\d+) Cucumbers$/, function (quantity, callback) {
+    this.scan(parseInt(quantity), callback);
+  });
+
+  this.Then(/^the total should be \$(\d+)$/, function (expectedTotal, callback) {
+    this.totalIs(parseInt(expectedTotal), callback);
+  });
+};
+```
+
+---
+
+# The worst effects of TDD
+
+* Initial slow progress
+* More tools to learn
+* New habits to form
 
 ---
 
@@ -374,6 +589,15 @@ Feature: Example feature
 * Use examples to clarify understanding of a requirement and your understanding
 * Provides living documentation and examples for developers
 
+^ The main side effect of TDD for me is that you write just the right amount of tests and code. No code exists without tests. Tests deepen the understanding of the problem you are trying to solve.
+
+---
+
+# The worst effects of BDD
+
+* Need to get the business involved
+* It can add huge overhead if done badly
+
 ---
 
 # The best effects of BDD
@@ -381,6 +605,7 @@ Feature: Example feature
 * Focused on **value**
 * Discover examples collaboratively with the business
 * Develop and use a ubiquitous language
+* Domain driven design (modeling by example)
 * Sustainable agility
 * Provides living documentation of the domain
 
@@ -393,6 +618,8 @@ Feature: Example feature
 # 👎🏻
 ## [fit] Tools _>_ Practices _>_ **Principles**
 
+^ The guiding theme I'm trying to convey is regardless of your tool selection or your desire to adopt BDD. You should recognize the default stance we may have as technologists.
+
 ^ There is a risk as technologists that we focus way too much on the tools
 
 ---
@@ -400,4 +627,17 @@ Feature: Example feature
 # 👍🏻
 ## [fit] **Principles** _>_ Practices _>_ Tools
 
-^ Try and redress the balance towards the principles that inspire the practices that the tools facilitate.
+^ Regardless of your context try and redress the balance towards the principles that inspire the practices that the tools facilitate.
+
+---
+
+# Questions?
+
+---
+
+## Credits
+
+* http://everzet.com/post/99045129766/introducing-modelling-by-example
+* https://cucumber.io/blog/2014/09/10/when-cucumbers-go-bad
+* https://github.com/cucumber-ltd/cukeup-2014-js-workshop
+* https://github.com/cucumber/cucumber-js
