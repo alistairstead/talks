@@ -73,7 +73,16 @@ the action of using something again: the ballast was cleaned ready for reuse.
 ---
 
 ### Composer
+^ Magento 1 module authors had the problem of installing modules in a reliable and repeatable way. As such in 2010 Colin Mollenhour went out and created modman.
 
+^ Modman allowed us to take individual modules and put them in there own source control system and use modman to link them into a Magento 1 install. For a
+series of bash scripts this worked really really well and is still in use for many projects today. However in 2011 Jordi Boggiano started out on creating
+a solution for the PHP community. His goal was to have a reliable package manager for PHP so anyone could create packages that could be used in any
+project. Composer was going to be the tool that managed a projects dependency by pinning versoins of installed software and could over time manage the
+dependencies of dependencies.
+
+^ One of the problems we as Magento developers faces was that Magento 1 shipped with a non standard and easily extensible autoloader so any
+opportunity to load or use these packages was not going to be an easy journey.
 ---
 
 ### Interfaces
