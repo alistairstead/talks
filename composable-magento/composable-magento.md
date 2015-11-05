@@ -1,4 +1,4 @@
-# [fit] The **how** and the **why** of composable Magento
+## The **how** and the **why** of composable Magento
 
 ---
 
@@ -6,27 +6,27 @@
 #### Technical Team Lead
 ##### t/**@jcowie** gh/**jcowie**
 
-### Alistair
+### Alistair Stead
 #### CTO Session Digital
 ##### t/**@alistairstead** gh/**alistairstead**
 
 ---
 
-# Reuse...
+# [fit] Reuse...
 
-**verb** |riːˈjuːz| _[ with obj. ]_
+* **verb** |riːˈjuːz| _[ with obj. ]_
 use again or more than once: the tape could be magnetically erased and reused.
 
-**noun** |riːˈjuːs| _[ mass noun ]_
+* **noun** |riːˈjuːs| _[ mass noun ]_
 the action of using something again: the ballast was cleaned ready for reuse.
 
-^ What is reuse? Programmers are taught this from day one. This is watchword for everything that drives our industry. Write code so it can be re-used re-purposed. This is why we have modular patterns, inheritance, extension points. This drives the idea of don't repeat yourself. In fact I have been heard to state many times both in public to any audience that would listen to me, and privately that I would rather hire a lazy engineer than one prepared to merrily keep typing and building the same features over and over and over...
+^ What is reuse? Programmers are taught this from day one. This is a watchword for everything that drives our industry. Write code so it can be re-used re-purposed. This is why we have modular patterns, inheritance, extension points. This drives the idea of don't repeat yourself. In fact I have been heard to state many times both in public to any audience that would listen to me, and privately that I would rather hire a lazy engineer than one prepared to merrily keep typing and building the same features over and over and over...
 
-^ Is re-use a myth? A fallacy driven from misunderstanding or the principles by which DRY was defined? A big industry misunderstanding?
+^ Is reuse a myth? A fallacy driven from misunderstanding or the principles by which DRY was defined? A big industry misunderstanding?
 
 ---
 
-### **D**on't **R**epeat **Y**ourself
+# **D**on't **R**epeat **Y**ourself
 
 ![](http://c.fastcompany.net/multisite_files/coexist/article_feature/1280-dry-land-farming.jpg)
 
@@ -34,9 +34,9 @@ the action of using something again: the ballast was cleaned ready for reuse.
 
 ---
 
-### “Every piece of knowledge should have one and only one representation.”[^1]
+> “Every piece of knowledge should have one and only one representation.”
 
-[^1]:The Pragmatic Programmer, by Dave Thomas and Andy Hunt
+-- Dave Thomas and Andy Hunt
 
 ^ This is the most subtle of principles. We tend to think of duplication at a code level — a mechanical “this looks like that, so duplication!” level. However, this guiding principle isn’t about code duplication; it is about knowledge duplication.
 
@@ -48,7 +48,9 @@ the action of using something again: the ballast was cleaned ready for reuse.
 
 ---
 
-### Inheritance
+# [fit] Inheritance
+
+![](images/inheritance.jpg)
 
 ^ Inheritance, objects and the promised land of reuse...
 
@@ -56,13 +58,17 @@ the action of using something again: the ballast was cleaned ready for reuse.
 
 ---
 
-### Traits and Mixins?
+# [fit] Traits _**&**_ Mixins?
+
+![](images/cocktail.jpg)
 
 ^ Oh wait, then the language authors and fellow programmers go and provide another way to misrepresent reuse and tempt us into thinking we are following DRY principles. This is closer but can provide a false sense of accomplishment.
 
 ---
 
 ### Modules for reuse
+
+![](images/lego.jpg)
 
 ^ We have modules for reuse but it is only reuse within the context of Magento and at that only reuse with Magento as of the major version when you wrote the module.
 
@@ -116,7 +122,17 @@ the action of using something again: the ballast was cleaned ready for reuse.
 
 ![](http://blog.lucid.berlin/wp-content/uploads/sites/4/2015/02/r-buckminster-fuller-5.jpg)
 
-^ The true power of an engineer is doing more with less. Using composable components to deliver functionality should be seen far superior to re-crafting code to solve a problem already solved by someone else. Not least because they may well know more about the problem than you.
+^ The true power of an engineer is doing more with less. Using composable components to deliver functionality should be seen as far superior to re-crafting code to solve a problem already solved by someone else. Not least because they may well know more about the problem than you. If the solution is fit for purpose then of course you should look to alternatives but first check that you are not being vein.
+
+---
+
+## Reuse through reduced MASS
+
+## $$ mass = \frac{n}{m/s^2} $$
+
+---
+
+###
 
 ---
 
