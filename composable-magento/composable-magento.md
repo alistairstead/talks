@@ -82,7 +82,11 @@ project. Composer was going to be the tool that managed a projects dependency by
 dependencies of dependencies.
 
 ^ One of the problems we as Magento developers faces was that Magento 1 shipped with a non standard and easily extensible autoloader so any
-opportunity to load or use these packages was not going to be an easy journey.
+opportunity to load or use these packages was not going to be an easy journey. Code was loaded via lib or a code pool. Composer only knows about loading content from src.
+
+^ Welcome to composer-hackathon project. This was a massive step forward in the composer Magento history. Based on this work and the foudning work by Modman we now had a reliabel way to install Magento 1 modules in a reliable way.
+
+^ Note problems on modules not being composable ? 
 ---
 
 ### Interfaces
