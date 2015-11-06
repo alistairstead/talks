@@ -12,7 +12,7 @@
 ---
 
 ### James Cowie
-### Technical Team Lead
+### Technical Team Lead Session Digital
 #### t/**@jcowie** gh/**jcowie**
 
 ### Alistair Stead
@@ -128,7 +128,7 @@ the action of using something again: the ballast was cleaned ready for reuse.
 
 ^ Thanks to Colin Mollenhour we got modman and we could begin to script and compose our modular application dependencies. However at this time this was a shim to installing just the connect modules packaged with PEAR.
 
-^ Over time Modman allowed us to take individual modules and put them in there own source control system and use modman to link them into a Magento 1 install. For a series of bash scripts this worked really really well and is still in use for many projects today. 
+^ Over time Modman allowed us to take individual modules and put them in there own source control system and use modman to link them into a Magento 1 install. For a series of bash scripts this worked really really well and is still in use for many projects today.
 
 ---
 
@@ -147,7 +147,7 @@ the action of using something again: the ballast was cleaned ready for reuse.
 
 ^ One of the problems we as Magento developers faced was that Magento 1 shipped with a non standard or easily extensible autoloader so any opportunity to load or use these packages was not going to be an easy journey.
 
-^ Thankfully this bridge was crossed with the hard work of the many developers behind the magento composer hackathon project. Simple in design this project added as a plugin to composer can detect in a composer.json file a new node for module type and treat these modules deifferently to regular composer packages. The different being that it will based on deployment strategy move the files into the correct location. This can be based on json mappings of source to destination or reading modman files. 
+^ Thankfully this bridge was crossed with the hard work of the many developers behind the magento composer hackathon project. Simple in design this project added as a plugin to composer can detect in a composer.json file a new node for module type and treat these modules deifferently to regular composer packages. The different being that it will based on deployment strategy move the files into the correct location. This can be based on json mappings of source to destination or reading modman files.
 
 ---
 
@@ -155,7 +155,7 @@ the action of using something again: the ballast was cleaned ready for reuse.
 
 ![](images/firegento.png)
 
-^ So now we had a means of installing Magento modules other than Connect or Modman but other than using connect to search or github search to find a package we were limited in how we could find this units of work. What we needed was our own packagist that we could search and find the packages that we wanted to install quickly and in a versioned way. What packages does is gives us the ability to install any of the Magento connect free modules, as well as allong any developer to publish there own modules via a simple pull request to the repository that powers this site. For the first time with this and all of the previous tools we were well on track to being able to share, pin versions and use other modules as a dependency on our own project. 
+^ So now we had a means of installing Magento modules other than Connect or Modman but other than using connect to search or github search to find a package we were limited in how we could find this units of work. What we needed was our own packagist that we could search and find the packages that we wanted to install quickly and in a versioned way. What packages does is gives us the ability to install any of the Magento connect free modules, as well as allong any developer to publish there own modules via a simple pull request to the repository that powers this site. For the first time with this and all of the previous tools we were well on track to being able to share, pin versions and use other modules as a dependency on our own project.
 
 ---
 
@@ -249,7 +249,17 @@ the action of using something again: the ballast was cleaned ready for reuse.
 
 ---
 
-### Credits
+![fill](https://www.youtube.com/watch?v=X8lqnO7aYe0&t=18s)
+
+---
+
+![original](images/AS-blue-bg.png)
+
+# [We are hiring...]
+
+---
+
+# Credits
 
 ![original](images/AS-blue-bg.png)
 
