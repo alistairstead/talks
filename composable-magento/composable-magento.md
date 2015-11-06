@@ -1,18 +1,31 @@
-# [fit] The **how** and the **why** of composable Magento
+
+![original](images/M2_BG-Cover-B.png)
+
+---
+
+## [fit] The _**HOW**_
+## [fit] & _**WHY**_
+## of composable Magento
+
+![original](images/AS-black-bg.png)
 
 ---
 
 ### James Cowie
-#### Technical Team Lead
-##### t/**@jcowie** gh/**jcowie**
+### Technical Team Lead
+#### t/**@jcowie** gh/**jcowie**
 
-### Alistair
-#### CTO Session Digital
-##### t/**@alistairstead** gh/**alistairstead**
+### Alistair Stead
+### CTO Session Digital
+#### t/**@alistairstead** gh/**alistairstead**
+
+![original](images/AS-blue-bg.png)
 
 ---
 
-# Reuse...
+# [fit] Reuse...
+
+![](images/AS-white-bg.png)
 
 **verb** |riːˈjuːz| _[ with obj. ]_
 use again or more than once: the tape could be magnetically erased and reused.
@@ -20,13 +33,15 @@ use again or more than once: the tape could be magnetically erased and reused.
 **noun** |riːˈjuːs| _[ mass noun ]_
 the action of using something again: the ballast was cleaned ready for reuse.
 
-^ What is reuse? Programmers are taught this from day one. This is watchword for everything that drives our industry. Write code so it can be re-used re-purposed. This is why we have modular patterns, inheritance, extension points. This drives the idea of don't repeat yourself. In fact I have been heard to state many times both in public to any audience that would listen to me, and privately that I would rather hire a lazy engineer than one prepared to merrily keep typing and building the same features over and over and over...
+^ What is reuse? Programmers are taught this from day one. This is a watchword for everything that drives our industry. Write code so it can be re-used re-purposed. This is why we have modular patterns, inheritance, extension points. This drives the idea of don't repeat yourself. In fact I have been heard to state many times both in public to any audience that would listen to me, and privately that I would rather hire a lazy engineer than one prepared to merrily keep typing and building the same features over and over and over...
 
-^ Is re-use a myth? A fallacy driven from misunderstanding or the principles by which DRY was defined? A big industry misunderstanding?
+^ Is reuse a myth? A fallacy driven from misunderstanding or the principles by which DRY was defined? A big industry misunderstanding?
 
 ---
 
-### **D**on't **R**epeat **Y**ourself
+# **D**on't **R**epeat **Y**ourself[^1]
+
+[^1]: Cut: Command ⌘ - x, Copy: Command ⌘ - c, Paste: Command ⌘ - v
 
 ![](http://c.fastcompany.net/multisite_files/coexist/article_feature/1280-dry-land-farming.jpg)
 
@@ -34,9 +49,10 @@ the action of using something again: the ballast was cleaned ready for reuse.
 
 ---
 
-### “Every piece of knowledge should have one and only one representation.”[^1]
+> “Every piece of knowledge should have one and only one representation.”
+-- Dave Thomas and Andy Hunt
 
-[^1]:The Pragmatic Programmer, by Dave Thomas and Andy Hunt
+![](images/AS-white-bg.png)
 
 ^ This is the most subtle of principles. We tend to think of duplication at a code level — a mechanical “this looks like that, so duplication!” level. However, this guiding principle isn’t about code duplication; it is about knowledge duplication.
 
@@ -48,7 +64,9 @@ the action of using something again: the ballast was cleaned ready for reuse.
 
 ---
 
-### Inheritance
+# [fit] Inheritance
+
+![](images/inheritance.jpg)
 
 ^ Inheritance, objects and the promised land of reuse...
 
@@ -56,64 +74,76 @@ the action of using something again: the ballast was cleaned ready for reuse.
 
 ---
 
-### Traits and Mixins?
+# [fit] Traits *_&_* Mixins?
+
+![](images/cocktail.jpg)
 
 ^ Oh wait, then the language authors and fellow programmers go and provide another way to misrepresent reuse and tempt us into thinking we are following DRY principles. This is closer but can provide a false sense of accomplishment.
 
 ---
 
-### Modules for reuse
+# [fit] Composition
+
+![](images/bricks.png)
+
+---
+
+# ⎏
+# [fit] Interfaces
+
+![](images/interfaces.jpg)
+
+---
+
+# [fit] Modules for reuse
+
+![](images/lego.jpg)
 
 ^ We have modules for reuse but it is only reuse within the context of Magento and at that only reuse with Magento as of the major version when you wrote the module.
 
 ---
 
-### Composition
+# [fit] Composer ![inline](https://getcomposer.org/img/logo-composer-transparent3.png)
+
+![](images/packagist.png)
 
 ---
 
-### Composer
-^ Magento 1 module authors had the problem of installing modules in a reliable and repeatable way. As such in 2010 Colin Mollenhour went out and created modman.
+# [fit] Composable
+# Magento
 
-^ Modman allowed us to take individual modules and put them in there own source control system and use modman to link them into a Magento 1 install. For a
-series of bash scripts this worked really really well and is still in use for many projects today. However in 2011 Jordi Boggiano started out on creating
-a solution for the PHP community. His goal was to have a reliable package manager for PHP so anyone could create packages that could be used in any
-project. Composer was going to be the tool that managed a projects dependency by pinning versoins of installed software and could over time manage the
-dependencies of dependencies.
-
-^ One of the problems we as Magento developers faces was that Magento 1 shipped with a non standard and easily extensible autoloader so any
-opportunity to load or use these packages was not going to be an easy journey. Code was loaded via lib or a code pool. Composer only knows about loading content from src.
-
-^ Welcome to composer-hackathon project. This was a massive step forward in the composer Magento history. Based on this work and the foudning work by Modman we now had a reliabel way to install Magento 1 modules in a reliable way.
-
-^ Note problems on modules not being composable ? 
----
-
-### Interfaces
+![original](images/AS-pink-bg.png)
 
 ---
 
-### Service Contracts
+# [fit] Service contracts
+
+![original](images/AS-blue-bg.png)
 
 ---
 
-### Composable Magento
+# [fit] Abstraction
+# away from the framework
 
----
-
-### Abstraction away from the framework
+![original](images/AS-black-bg.png)
 
 ^ If you are using composer and the generated autoloading functionality it is practical to write code that is unaware of Magento, that sits in some other location than a Magento module but is wired into the structures and deep inheritance chain that Magento defines. The wiring however is minimal and isolated away from the code that solve the actual problem. This means you have created a solution prime for re-use because it can be re-wired or re-composed into other projects and applications.
 
 ---
 
-### The naked Magento module
+# [fit] The naked
+# Magento module
+
+![](images/emet.jpg)
 
 ^ The idea of the naked module is to create code that is completely unaware that it will be applied within a Magento application. This would mean that it can also be applied to a new version of Magento with a greatly reduced amount of re-work. We get to apply DRY in the true form and only create the new wiring to Magento 2 or 3 or 4. Magento will last for ever you know!
 
 ---
 
-### Your **value** as an engineer is not the sum of the code you have written
+![original](images/AS-black-bg.png)
+
+> Your **value** as an engineer is not the sum of the code you have written
+-- LoC !== $$
 
 ^ The value of engineer is their ability to write code to solve problems. However their value is not attached to that code. Deleting code should not be painful and you should not be protective of your code beyond it's ability to solve a problem.
 
@@ -121,19 +151,56 @@ opportunity to load or use these packages was not going to be an easy journey. C
 
 ---
 
-### Ephemeralisation
+![original](images/AS-black-bg.png)
+
+# [fit] Ephemeralisation
 
 ---
 
-### Doing more with less
+![105%](http://blog.lucid.berlin/wp-content/uploads/sites/4/2015/02/r-buckminster-fuller-5.jpg)
 
-![](http://blog.lucid.berlin/wp-content/uploads/sites/4/2015/02/r-buckminster-fuller-5.jpg)
+#
+# [fit] Doing more with less[^2]
 
-^ The true power of an engineer is doing more with less. Using composable components to deliver functionality should be seen far superior to re-crafting code to solve a problem already solved by someone else. Not least because they may well know more about the problem than you.
+[^2]: Buckminster (Bucky) Fuller
+
+^ The true power of an engineer is doing more with less. Using composable components to deliver functionality should be seen as far superior to re-crafting code to solve a problem already solved by someone else. Not least because they may well know more about the problem than you. If the solution is fit for purpose then of course you should look to alternatives but first check that you are not being vein.
+
+---
+
+![original](images/AS-black-bg.png)
+
+## Reuse through reduced MASS
+
+## $$ mass = \frac{n}{m/s^2} $$
+
+^ So what I'm proposing here is not simply a call to achieving more with less effort. It is about being more effective and achieving more reuse by building with less mass. DEMASS! Building code with a clean, clear intent that is focused on doing one thing well and only one thing.
+
+---
+
+# [fit] Building **LESS**, well!
+
+![original](images/AS-black-bg.png)
+
+^ Smaller more focused modules and components are more portable and more reusable. This should be a familiar principle. It is the principle upon which unix systems are based and other languages and platforms have got this right also e.g. node.js, python.
+
+^ Building on the physics anecdote then objects with less mass have less inertia and it is much easier to influence their path. Making them much more flexible and usable in unplanned contexts.
+
+---
+
+# [fit] Thank you...
+
+![original](images/AS-pink-bg.png)
+
+---
+
+![original](images/M2_BG-Cover-P.png)
 
 ---
 
 ### Credits
+
+![original](images/AS-blue-bg.png)
 
 * https://skillsmatter.com/skillscasts/6433-business-logic-a-different-perspective
 * https://www.youtube.com/watch?v=X8lqnO7aYe0
