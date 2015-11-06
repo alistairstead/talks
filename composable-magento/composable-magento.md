@@ -107,15 +107,16 @@ the action of using something again: the ballast was cleaned ready for reuse.
 
 # ![200%](images/m-connect.png)
 
-^ Magento has always (almost always) been extensible through modular code reuse. The connect marketplace had a higher purpose but it mean that Magento allowed modular code reuse.
+^ Magento has always (almost always) been extensible through modular code reuse. The connect marketplace had a higher purpose but it meant that Magento allowed modular code reuse.
 
-^ Though to be honest not many development teams seemed to use it extensively.
+^ Though to be honest not many development teams seemed to use it extensively. We all know first had the issues connect had and by design its ease of use for non developers to install from was not ideal. But lets not forget that at least the tought process was in place to allow us to think about how packages created for Magento could be re used in other projects.
 
 ---
 
 ![](images/AS-white-bg.png)
 
-# `PEAR`
+
+# ![200%](images/pear.png)
 
 ^ It was based on the PHP library repository technology of the time PEAR but restricted the use to the Magento repository for installs. Using the wider community of PEAR packages was problematic and there was nothing but legacy code in the PEAR channels.
 
@@ -127,11 +128,34 @@ the action of using something again: the ballast was cleaned ready for reuse.
 
 ^ Thanks to Colin Mollenhour we got modman and we could begin to script and compose our modular application dependencies. However at this time this was a shim to installing just the connect modules packaged with PEAR.
 
+^ Over time Modman allowed us to take individual modules and put them in there own source control system and use modman to link them into a Magento 1 install. For a series of bash scripts this worked really really well and is still in use for many projects today. 
+
 ---
 
 # [fit] Composer ![inline](https://getcomposer.org/img/logo-composer-transparent3.png)
 
 ![](images/packagist.png)
+
+^ in 2011 Jordi Boggiano started out on creating a solution for the PHP community. His goal was to have a reliable package manager for PHP so anyone could create packages that could be used in any project. Composer was going to be the tool that managed a projects dependency by pinning versoins of installed software and could over time manage the dependencies of dependencies.
+
+^ One of the problems we as Magento developers faced was that Magento 1 shipped with a non standard or easily extensible autoloader so any opportunity to load or use these packages was not going to be an easy journey.
+
+---
+# [fit] Magento - Composer ![inline](https://getcomposer.org/img/logo-composer-transparent3.png)
+
+![](images/hackathon-composer.png)
+
+^ One of the problems we as Magento developers faced was that Magento 1 shipped with a non standard or easily extensible autoloader so any opportunity to load or use these packages was not going to be an easy journey.
+
+^ Thankfully this bridge was crossed with the hard work of the many developers behind the magento composer hackathon project. Simple in design this project added as a plugin to composer can detect in a composer.json file a new node for module type and treat these modules deifferently to regular composer packages. The different being that it will based on deployment strategy move the files into the correct location. This can be based on json mappings of source to destination or reading modman files. 
+
+---
+
+# [fit] packages.firegento ![inline](https://getcomposer.org/img/logo-composer-transparent3.png)
+
+![](images/firegento.png)
+
+^ So now we had a means of installing Magento modules other than Connect or Modman but other than using connect to search or github search to find a package we were limited in how we could find this units of work. What we needed was our own packagist that we could search and find the packages that we wanted to install quickly and in a versioned way. What packages does is gives us the ability to install any of the Magento connect free modules, as well as allong any developer to publish there own modules via a simple pull request to the repository that powers this site. For the first time with this and all of the previous tools we were well on track to being able to share, pin versions and use other modules as a dependency on our own project. 
 
 ---
 
