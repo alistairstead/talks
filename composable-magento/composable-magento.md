@@ -74,7 +74,7 @@ the action of using something again: the ballast was cleaned ready for reuse.
 
 ---
 
-# [fit] Traits _**&**_ Mixins?
+# [fit] Traits *_&_* Mixins?
 
 ![](images/cocktail.jpg)
 
@@ -112,7 +112,7 @@ the action of using something again: the ballast was cleaned ready for reuse.
 # [fit] Composable
 # Magento
 
-![](images/AS-white-bg.png)
+![original](images/AS-pink-bg.png)
 
 ---
 
@@ -125,7 +125,7 @@ the action of using something again: the ballast was cleaned ready for reuse.
 # [fit] Abstraction
 # away from the framework
 
-![original](images/AS-blue-bg.png)
+![original](images/AS-black-bg.png)
 
 ^ If you are using composer and the generated autoloading functionality it is practical to write code that is unaware of Magento, that sits in some other location than a Magento module but is wired into the structures and deep inheritance chain that Magento defines. The wiring however is minimal and isolated away from the code that solve the actual problem. This means you have created a solution prime for re-use because it can be re-wired or re-composed into other projects and applications.
 
@@ -140,7 +140,10 @@ the action of using something again: the ballast was cleaned ready for reuse.
 
 ---
 
-### Your **value** as an engineer is not the sum of the code you have written
+![original](images/AS-black-bg.png)
+
+> Your **value** as an engineer is not the sum of the code you have written
+-- LoC !== $$
 
 ^ The value of engineer is their ability to write code to solve problems. However their value is not attached to that code. Deleting code should not be painful and you should not be protective of your code beyond it's ability to solve a problem.
 
@@ -148,25 +151,40 @@ the action of using something again: the ballast was cleaned ready for reuse.
 
 ---
 
-### Ephemeralisation
+![original](images/AS-black-bg.png)
+
+# [fit] Ephemeralisation
 
 ---
 
-### Doing more with less
+![105%](http://blog.lucid.berlin/wp-content/uploads/sites/4/2015/02/r-buckminster-fuller-5.jpg)
 
-![](http://blog.lucid.berlin/wp-content/uploads/sites/4/2015/02/r-buckminster-fuller-5.jpg)
+#
+# [fit] Doing more with less[^2]
+
+[^2]: Buckminster (Bucky) Fuller
 
 ^ The true power of an engineer is doing more with less. Using composable components to deliver functionality should be seen as far superior to re-crafting code to solve a problem already solved by someone else. Not least because they may well know more about the problem than you. If the solution is fit for purpose then of course you should look to alternatives but first check that you are not being vein.
 
 ---
 
+![original](images/AS-black-bg.png)
+
 ## Reuse through reduced MASS
 
 ## $$ mass = \frac{n}{m/s^2} $$
 
+^ So what I'm proposing here is not simply a call to achieving more with less effort. It is about being more effective and achieving more reuse by building with less mass. DEMASS! Building code with a clean, clear intent that is focused on doing one thing well and only one thing.
+
 ---
 
-###
+# [fit] Building **LESS**, well!
+
+![original](images/AS-black-bg.png)
+
+^ Smaller more focused modules and components are more portable and more reusable. This should be a familiar principle. It is the principle upon which unix systems are based and other languages and platforms have got this right also e.g. node.js, python.
+
+^ Building on the physics anecdote then objects with less mass have less inertia and it is much easier to influence their path. Making them much more flexible and usable in unplanned contexts.
 
 ---
 
