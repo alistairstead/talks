@@ -1,23 +1,36 @@
-## The **how** and the **why** of composable Magento
+
+![original](images/M2_BG-Cover-B.png)
+
+---
+
+## [fit] The _**HOW**_
+## [fit] & _**WHY**_
+## of composable Magento
+
+![original](images/AS-black-bg.png)
 
 ---
 
 ### James Cowie
-#### Technical Team Lead
-##### t/**@jcowie** gh/**jcowie**
+### Technical Team Lead
+#### t/**@jcowie** gh/**jcowie**
 
 ### Alistair Stead
-#### CTO Session Digital
-##### t/**@alistairstead** gh/**alistairstead**
+### CTO Session Digital
+#### t/**@alistairstead** gh/**alistairstead**
+
+![original](images/AS-blue-bg.png)
 
 ---
 
 # [fit] Reuse...
 
-* **verb** |riːˈjuːz| _[ with obj. ]_
+![](images/AS-white-bg.png)
+
+**verb** |riːˈjuːz| _[ with obj. ]_
 use again or more than once: the tape could be magnetically erased and reused.
 
-* **noun** |riːˈjuːs| _[ mass noun ]_
+**noun** |riːˈjuːs| _[ mass noun ]_
 the action of using something again: the ballast was cleaned ready for reuse.
 
 ^ What is reuse? Programmers are taught this from day one. This is a watchword for everything that drives our industry. Write code so it can be re-used re-purposed. This is why we have modular patterns, inheritance, extension points. This drives the idea of don't repeat yourself. In fact I have been heard to state many times both in public to any audience that would listen to me, and privately that I would rather hire a lazy engineer than one prepared to merrily keep typing and building the same features over and over and over...
@@ -26,7 +39,9 @@ the action of using something again: the ballast was cleaned ready for reuse.
 
 ---
 
-# **D**on't **R**epeat **Y**ourself
+# **D**on't **R**epeat **Y**ourself[^1]
+
+[^1]: Cut: Command ⌘ - x, Copy: Command ⌘ - c, Paste: Command ⌘ - v
 
 ![](http://c.fastcompany.net/multisite_files/coexist/article_feature/1280-dry-land-farming.jpg)
 
@@ -35,8 +50,9 @@ the action of using something again: the ballast was cleaned ready for reuse.
 ---
 
 > “Every piece of knowledge should have one and only one representation.”
-
 -- Dave Thomas and Andy Hunt
+
+![](images/AS-white-bg.png)
 
 ^ This is the most subtle of principles. We tend to think of duplication at a code level — a mechanical “this looks like that, so duplication!” level. However, this guiding principle isn’t about code duplication; it is about knowledge duplication.
 
@@ -66,7 +82,20 @@ the action of using something again: the ballast was cleaned ready for reuse.
 
 ---
 
-### Modules for reuse
+# [fit] Composition
+
+![](images/bricks.png)
+
+---
+
+# ⎏
+# [fit] Interfaces
+
+![](images/interfaces.jpg)
+
+---
+
+# [fit] Modules for reuse
 
 ![](images/lego.jpg)
 
@@ -74,33 +103,38 @@ the action of using something again: the ballast was cleaned ready for reuse.
 
 ---
 
-### Composition
+# [fit] Composer ![inline](https://getcomposer.org/img/logo-composer-transparent3.png)
+
+![](images/packagist.png)
 
 ---
 
-### Composer
+# [fit] Composable
+# Magento
+
+![](images/AS-white-bg.png)
 
 ---
 
-### Interfaces
+# [fit] Service contracts
+
+![original](images/AS-blue-bg.png)
 
 ---
 
-### Service Contracts
+# [fit] Abstraction
+# away from the framework
 
----
-
-### Composable Magento
-
----
-
-### Abstraction away from the framework
+![original](images/AS-blue-bg.png)
 
 ^ If you are using composer and the generated autoloading functionality it is practical to write code that is unaware of Magento, that sits in some other location than a Magento module but is wired into the structures and deep inheritance chain that Magento defines. The wiring however is minimal and isolated away from the code that solve the actual problem. This means you have created a solution prime for re-use because it can be re-wired or re-composed into other projects and applications.
 
 ---
 
-### The naked Magento module
+# [fit] The naked
+# Magento module
+
+![](images/emet.jpg)
 
 ^ The idea of the naked module is to create code that is completely unaware that it will be applied within a Magento application. This would mean that it can also be applied to a new version of Magento with a greatly reduced amount of re-work. We get to apply DRY in the true form and only create the new wiring to Magento 2 or 3 or 4. Magento will last for ever you know!
 
@@ -136,7 +170,19 @@ the action of using something again: the ballast was cleaned ready for reuse.
 
 ---
 
+# [fit] Thank you...
+
+![original](images/AS-pink-bg.png)
+
+---
+
+![original](images/M2_BG-Cover-P.png)
+
+---
+
 ### Credits
+
+![original](images/AS-blue-bg.png)
 
 * https://skillsmatter.com/skillscasts/6433-business-logic-a-different-perspective
 * https://www.youtube.com/watch?v=X8lqnO7aYe0
