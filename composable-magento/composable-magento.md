@@ -39,9 +39,9 @@ the action of using something again: the ballast was cleaned ready for reuse.
 
 ---
 
-# **D**on't **R**epeat **Y**ourself[^1]
+# **D**on't **R**epeat **Y**ourself[^⌘]
 
-[^1]: Cut: Command ⌘ - x, Copy: Command ⌘ - c, Paste: Command ⌘ - v
+[^⌘]: Cut: Command ⌘ - x, Copy: Command ⌘ - c, Paste: Command ⌘ - v
 
 ![](http://c.fastcompany.net/multisite_files/coexist/article_feature/1280-dry-land-farming.jpg)
 
@@ -103,18 +103,45 @@ the action of using something again: the ballast was cleaned ready for reuse.
 
 ---
 
+![original](images/AS-yellow-bg.png)
+
+# ![200%](images/m-connect.png)
+
+^ Magento has always (almost always) been extensible through modular code reuse. The connect marketplace had a higher purpose but it mean that Magento allowed modular code reuse.
+
+^ Though to be honest not many development teams seemed to use it extensively.
+
+---
+
+![](images/AS-white-bg.png)
+
+# `PEAR`
+
+^ It was based on the PHP library repository technology of the time PEAR but restricted the use to the Magento repository for installs. Using the wider community of PEAR packages was problematic and there was nothing but legacy code in the PEAR channels.
+
+---
+
+![](images/AS-white-bg.png)
+
+# `modman`
+
+^ Thanks to Colin Mollenhour we got modman and we could begin to script and compose our modular application dependencies. However at this time this was a shim to installing just the connect modules packaged with PEAR.
+
+---
+
 # [fit] Composer ![inline](https://getcomposer.org/img/logo-composer-transparent3.png)
 
 ![](images/packagist.png)
 
 ---
 
+![original](images/AS-pink-bg.png)
+
 # [fit] Composable
 # Magento
 
-![original](images/AS-pink-bg.png)
-
 ---
+
 
 # [fit] Service contracts
 
@@ -160,9 +187,9 @@ the action of using something again: the ballast was cleaned ready for reuse.
 ![105%](http://blog.lucid.berlin/wp-content/uploads/sites/4/2015/02/r-buckminster-fuller-5.jpg)
 
 #
-# [fit] Doing more with less[^2]
+# [fit] Doing more with less[^Fuller, 1938]
 
-[^2]: Buckminster (Bucky) Fuller
+[^Fuller, 1938]: Buckminster (Bucky) Fuller
 
 ^ The true power of an engineer is doing more with less. Using composable components to deliver functionality should be seen as far superior to re-crafting code to solve a problem already solved by someone else. Not least because they may well know more about the problem than you. If the solution is fit for purpose then of course you should look to alternatives but first check that you are not being vein.
 
