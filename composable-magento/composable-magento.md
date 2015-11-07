@@ -86,6 +86,8 @@ the action of using something again: the ballast was cleaned ready for reuse.
 
 ![](images/bricks.png)
 
+^ Throughout Magento 1 development the main way to develop was to use Inheritance over Composition. We had to do this for many reasons, No concrete way to inject dependencies etc etc. But as we have evolved we know we should favour Composition over Inheritache so what is composition ? When we talk about inheritance we tend to use " Is a " relationship. My class "Is a" database class. However with composition lets start talking about our code as "Has a" or "Uses a", We can then start to de couple the creation of objects and services from the classes that are useing some part of them. E.g. This UserSignup class "Uses" the database. We are composing out objects of all the ingredients that is required to make the work.
+
 ---
 
 # ⎏
