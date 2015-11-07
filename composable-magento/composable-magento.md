@@ -86,6 +86,8 @@ the action of using something again: the ballast was cleaned ready for reuse.
 
 ![](images/bricks.png)
 
+^ Throughout Magento 1 development the main way to develop was to use Inheritance over Composition. We had to do this for many reasons, No concrete way to inject dependencies etc etc. But as we have evolved we know we should favour Composition over Inheritache so what is composition ? When we talk about inheritance we tend to use " Is a " relationship. My class "Is a" database class. However with composition lets start talking about our code as "Has a" or "Uses a", We can then start to de couple the creation of objects and services from the classes that are useing some part of them. E.g. This UserSignup class "Uses" the database. We are composing out objects of all the ingredients that is required to make the work.
+
 ---
 
 # ⎏
@@ -128,7 +130,7 @@ the action of using something again: the ballast was cleaned ready for reuse.
 
 ^ Thanks to Colin Mollenhour we got modman and we could begin to script and compose our modular application dependencies. However at this time this was a shim to installing just the connect modules packaged with PEAR.
 
-^ Over time Modman allowed us to take individual modules and put them in there own source control system and use modman to link them into a Magento 1 install. For a series of bash scripts this worked really really well and is still in use for many projects today.
+^ Over time Modman allowed us to take individual modules and put them in there own source control system and use modman to link them into a Magento 1 install. For a series of bash scripts this worked really really well and is still in use for many projects today. 
 
 ---
 
@@ -147,7 +149,7 @@ the action of using something again: the ballast was cleaned ready for reuse.
 
 ^ One of the problems we as Magento developers faced was that Magento 1 shipped with a non standard or easily extensible autoloader so any opportunity to load or use these packages was not going to be an easy journey.
 
-^ Thankfully this bridge was crossed with the hard work of the many developers behind the magento composer hackathon project. Simple in design this project added as a plugin to composer can detect in a composer.json file a new node for module type and treat these modules deifferently to regular composer packages. The different being that it will based on deployment strategy move the files into the correct location. This can be based on json mappings of source to destination or reading modman files.
+^ Thankfully this bridge was crossed with the hard work of the many developers behind the magento composer hackathon project. Simple in design this project added as a plugin to composer can detect in a composer.json file a new node for module type and treat these modules deifferently to regular composer packages. The different being that it will based on deployment strategy move the files into the correct location. This can be based on json mappings of source to destination or reading modman files. 
 
 ---
 
@@ -155,14 +157,25 @@ the action of using something again: the ballast was cleaned ready for reuse.
 
 ![](images/firegento.png)
 
-^ So now we had a means of installing Magento modules other than Connect or Modman but other than using connect to search or github search to find a package we were limited in how we could find this units of work. What we needed was our own packagist that we could search and find the packages that we wanted to install quickly and in a versioned way. What packages does is gives us the ability to install any of the Magento connect free modules, as well as allong any developer to publish there own modules via a simple pull request to the repository that powers this site. For the first time with this and all of the previous tools we were well on track to being able to share, pin versions and use other modules as a dependency on our own project.
+^ So now we had a means of installing Magento modules other than Connect or Modman but other than using connect to search or github search to find a package we were limited in how we could find this units of work. What we needed was our own packagist that we could search and find the packages that we wanted to install quickly and in a versioned way. What packages does is gives us the ability to install any of the Magento connect free modules, as well as allong any developer to publish there own modules via a simple pull request to the repository that powers this site. For the first time with this and all of the previous tools we were well on track to being able to share, pin versions and use other modules as a dependency on our own project. 
 
 ---
+
+# [fit] Versioning
+# 1.0.2
+![](images/SemVerEvolution_3.png)
+
+^ We may think that version numbers are just there for convinience increase the last digit each time you save the file. But versioning is an extremly powerfull communication tool. If we follow the semantic versioning spectification we can tell people alot about out modules stability. What we are trying to comunicate is what version is our module at. We should follow that the first digit represent any majour releases of this software. Big breaking changes Magento 2 could be 2.0.0 when it first started development. Its a massive change and not one that you can just upgrade to without cause for concern. Now the next digit is minour number this should be incremepnted when you add functionality in a backwards compatiable manour. Your adding new functionality but not breaking any of the old stuff. Finally the last digit is the patch version. Find a bug fix the bug push the patch number up. That way people can see how your module is progressing, AND they can pin via composer there version to only even update to patched versioned or minor versions. Tha is unless we just throw a * in our composer.json dependency.
+
+---
+
 
 ![original](images/AS-pink-bg.png)
 
 # [fit] Composable
 # Magento
+
+^ So how can we achieve this within Magento ? Well the Magento 2 core team have put alot of thought into how reuse can occur inside of Magento 2. There have been lots of improvments in Magento 2 that make reuse possible. You will hear Composer, Service Contracts, Dependency Injection used with any Magento 2 developer now. Because the world of software engineering has evolved since the days of initial Magento 1 we are priviliaged to be able to take advantage of this in our Magento 2 development. If you look in the core of Magento 2 modules you will see that each one its now its own true module that can be reused. It has a composer.json file listing what each modules dependency is ( granted some of the modules have a dependency on every other module ) but its starting to become more decoupled so in theory we can create a magento 2 installation selecting onlt the composer packages that we want to run the store. Exclude gift messaging for example simple we just dont put this into our composer file. 
 
 ---
 
@@ -170,6 +183,16 @@ the action of using something again: the ballast was cleaned ready for reuse.
 # [fit] Service contracts
 
 ![original](images/AS-blue-bg.png)
+
+^ In Magento 2 the core developers have introduced a notion of Service Contracts. In reality these are Interfaces that all modules should: Create so that they are providing a public API of how there module works, As well as using these service contracts within there code. Why does this matter ? Well there are many reasons. Some of the most important are its making module developers think more about how the modules are used. These public API's are not API's that are consumed by a client but are how developers can extend or interact with the module they are providing a gatewaw into the internals but its a contract to say that these will never change. If I have a contract for getName it will only ever return getName and what is good is that as a consume of this module I know that there is a single place to look for these API's. What this also means is that because we are working based on these service contracts we are limiting the number of backwards compatiability breaks that could occur. The module developers are free to change the internals of there modules how it collects data processes it etc. But the Service Contract will remain the same. Only in majour version releases should we ever be introducing BC breaks. 
+
+---
+
+# [fit] Dependency Injection
+
+![original](images/injection.jpg)
+
+^ At its core Magento 2 supports dependency injection. What dependency injection does in its most basic form is takes the creation of objects away from the class that is using then. This means we can really start to think about re use a lot more. In conjunction with service contracts / interfaces we are able to swap out the concrete implementations at run time so we are de coupling our actual implementation of the framework from our modules. DI in Magento 2 is a vast section to cover but what I will say is that it is investing the time in looking at how dependency injection throey is created and how Magento 2 implement it. When used correctly it means that we have modules that are self contained Plain ol PHP objects that we can inject back into the framework to persist or perform framework specific actions keeping our bespoke domain code outside of the framework and only injecting it in as a bridge into Magento 2.
 
 ---
 
