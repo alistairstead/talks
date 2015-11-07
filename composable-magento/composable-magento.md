@@ -13,7 +13,7 @@
 
 ### James Cowie
 ### Technical Team Lead Session Digital
-#### t/**@jcowie** gh/**jcowie**
+#### t/**@jcowie** gh/**jamescowie**
 
 ### Alistair Stead
 ### CTO Session Digital
