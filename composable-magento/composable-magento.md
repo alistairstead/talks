@@ -192,7 +192,7 @@ the action of using something again: the ballast was cleaned ready for reuse.
 
 ![original](images/injection.jpg)
 
-^ At its core Magento 2 supports dependency injection. 
+^ At its core Magento 2 supports dependency injection. What dependency injection does in its most basic form is takes the creation of objects away from the class that is using then. This means we can really start to think about re use a lot more. In conjunction with service contracts / interfaces we are able to swap out the concrete implementations at run time so we are de coupling our actual implementation of the framework from our modules. DI in Magento 2 is a vast section to cover but what I will say is that it is investing the time in looking at how dependency injection throey is created and how Magento 2 implement it. When used correctly it means that we have modules that are self contained Plain ol PHP objects that we can inject back into the framework to persist or perform framework specific actions keeping our bespoke domain code outside of the framework and only injecting it in as a bridge into Magento 2.
 
 ---
 
