@@ -188,6 +188,14 @@ the action of using something again: the ballast was cleaned ready for reuse.
 
 ---
 
+# [fit] Dependency Injection
+
+![original](images/injection.jpg)
+
+^ At its core Magento 2 supports dependency injection. 
+
+---
+
 # [fit] Abstraction
 # away from the framework
 
@@ -264,7 +272,17 @@ the action of using something again: the ballast was cleaned ready for reuse.
 
 ---
 
-### Credits
+![fill](https://www.youtube.com/watch?v=X8lqnO7aYe0&t=18s)
+
+---
+
+![original](images/AS-blue-bg.png)
+
+# [We are hiring...]
+
+---
+
+# Credits
 
 ![original](images/AS-blue-bg.png)
 
