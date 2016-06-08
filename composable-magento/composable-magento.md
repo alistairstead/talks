@@ -76,7 +76,7 @@ the action of using something again: the ballast was cleaned ready for reuse.
 
 # [fit] Traits *_&_* Mixins?
 
-![](images/cocktail.jpg)
+![original](images/cocktail.jpg)
 
 ^ Oh wait, then the language authors and fellow programmers go and provide another way to misrepresent reuse and tempt us into thinking we are following DRY principles. This is closer but can provide a false sense of accomplishment.
 
@@ -94,6 +94,12 @@ the action of using something again: the ballast was cleaned ready for reuse.
 # [fit] Interfaces
 
 ![](images/interfaces.jpg)
+
+^ If we are going to favour composition we MUST then use interfaces. Interfaces provide a contract of interaction, the shape of input and outputs that will work together.
+
+^ What is the lego interface? Is it the shape of the bricks? Does everything inherit from the brick?
+
+^ The interface is the bumps and sockets, the brick in the middle is an adapter, that is whey they can have such a varied set of objects that all integrate without problems and allow such spectacular reuse and varied application.
 
 ---
 
@@ -130,7 +136,7 @@ the action of using something again: the ballast was cleaned ready for reuse.
 
 ^ Thanks to Colin Mollenhour we got modman and we could begin to script and compose our modular application dependencies. However at this time this was a shim to installing just the connect modules packaged with PEAR.
 
-^ Over time Modman allowed us to take individual modules and put them in there own source control system and use modman to link them into a Magento 1 install. For a series of bash scripts this worked really really well and is still in use for many projects today. 
+^ Over time Modman allowed us to take individual modules and put them in there own source control system and use modman to link them into a Magento 1 install. For a series of bash scripts this worked really really well and is still in use for many projects today.
 
 ---
 
@@ -147,9 +153,7 @@ the action of using something again: the ballast was cleaned ready for reuse.
 
 ![](images/hackathon-composer.png)
 
-^ One of the problems we as Magento developers faced was that Magento 1 shipped with a non standard or easily extensible autoloader so any opportunity to load or use these packages was not going to be an easy journey.
-
-^ Thankfully this bridge was crossed with the hard work of the many developers behind the magento composer hackathon project. Simple in design this project added as a plugin to composer can detect in a composer.json file a new node for module type and treat these modules deifferently to regular composer packages. The different being that it will based on deployment strategy move the files into the correct location. This can be based on json mappings of source to destination or reading modman files. 
+^ Thankfully this bridge was crossed with the hard work of the many developers behind the magento composer hackathon project. Simple in design this project added as a plugin to composer can detect in a composer.json file a new node for module type and treat these modules deifferently to regular composer packages. The different being that it will based on deployment strategy move the files into the correct location. This can be based on json mappings of source to destination or reading modman files.
 
 ---
 
@@ -157,7 +161,7 @@ the action of using something again: the ballast was cleaned ready for reuse.
 
 ![](images/firegento.png)
 
-^ So now we had a means of installing Magento modules other than Connect or Modman but other than using connect to search or github search to find a package we were limited in how we could find this units of work. What we needed was our own packagist that we could search and find the packages that we wanted to install quickly and in a versioned way. What packages does is gives us the ability to install any of the Magento connect free modules, as well as allong any developer to publish there own modules via a simple pull request to the repository that powers this site. For the first time with this and all of the previous tools we were well on track to being able to share, pin versions and use other modules as a dependency on our own project. 
+^ So now we had a means of installing Magento modules other than Connect or Modman but other than using connect to search or github search to find a package we were limited in how we could find this units of work. What we needed was our own packagist that we could search and find the packages that we wanted to install quickly and in a versioned way. What packages does is gives us the ability to install any of the Magento connect free modules, as well as allong any developer to publish there own modules via a simple pull request to the repository that powers this site. For the first time with this and all of the previous tools we were well on track to being able to share, pin versions and use other modules as a dependency on our own project.
 
 ---
 
@@ -175,7 +179,7 @@ the action of using something again: the ballast was cleaned ready for reuse.
 # [fit] Composable
 # Magento
 
-^ So how can we achieve this within Magento ? Well the Magento 2 core team have put alot of thought into how reuse can occur inside of Magento 2. There have been lots of improvments in Magento 2 that make reuse possible. You will hear Composer, Service Contracts, Dependency Injection used with any Magento 2 developer now. Because the world of software engineering has evolved since the days of initial Magento 1 we are priviliaged to be able to take advantage of this in our Magento 2 development. If you look in the core of Magento 2 modules you will see that each one its now its own true module that can be reused. It has a composer.json file listing what each modules dependency is ( granted some of the modules have a dependency on every other module ) but its starting to become more decoupled so in theory we can create a magento 2 installation selecting onlt the composer packages that we want to run the store. Exclude gift messaging for example simple we just dont put this into our composer file. 
+^ So how can we achieve this within Magento ? Well the Magento 2 core team have put alot of thought into how reuse can occur inside of Magento 2. There have been lots of improvments in Magento 2 that make reuse possible. You will hear Composer, Service Contracts, Dependency Injection used with any Magento 2 developer now. Because the world of software engineering has evolved since the days of initial Magento 1 we are priviliaged to be able to take advantage of this in our Magento 2 development. If you look in the core of Magento 2 modules you will see that each one its now its own true module that can be reused. It has a composer.json file listing what each modules dependency is ( granted some of the modules have a dependency on every other module ) but its starting to become more decoupled so in theory we can create a magento 2 installation selecting onlt the composer packages that we want to run the store. Exclude gift messaging for example simple we just dont put this into our composer file.
 
 ---
 
@@ -184,7 +188,7 @@ the action of using something again: the ballast was cleaned ready for reuse.
 
 ![original](images/AS-blue-bg.png)
 
-^ In Magento 2 the core developers have introduced a notion of Service Contracts. In reality these are Interfaces that all modules should: Create so that they are providing a public API of how there module works, As well as using these service contracts within there code. Why does this matter ? Well there are many reasons. Some of the most important are its making module developers think more about how the modules are used. These public API's are not API's that are consumed by a client but are how developers can extend or interact with the module they are providing a gatewaw into the internals but its a contract to say that these will never change. If I have a contract for getName it will only ever return getName and what is good is that as a consume of this module I know that there is a single place to look for these API's. What this also means is that because we are working based on these service contracts we are limiting the number of backwards compatiability breaks that could occur. The module developers are free to change the internals of there modules how it collects data processes it etc. But the Service Contract will remain the same. Only in majour version releases should we ever be introducing BC breaks. 
+^ In Magento 2 the core developers have introduced a notion of Service Contracts. In reality these are Interfaces that all modules should: Create so that they are providing a public API of how there module works, As well as using these service contracts within there code. Why does this matter ? Well there are many reasons. Some of the most important are its making module developers think more about how the modules are used. These public API's are not API's that are consumed by a client but are how developers can extend or interact with the module they are providing a gatewaw into the internals but its a contract to say that these will never change. If I have a contract for getName it will only ever return getName and what is good is that as a consume of this module I know that there is a single place to look for these API's. What this also means is that because we are working based on these service contracts we are limiting the number of backwards compatiability breaks that could occur. The module developers are free to change the internals of there modules how it collects data processes it etc. But the Service Contract will remain the same. Only in majour version releases should we ever be introducing BC breaks.
 
 ---
 
@@ -210,7 +214,11 @@ the action of using something again: the ballast was cleaned ready for reuse.
 
 ![](images/emet.jpg)
 
-^ The idea of the naked module is to create code that is completely unaware that it will be applied within a Magento application. This would mean that it can also be applied to a new version of Magento with a greatly reduced amount of re-work. We get to apply DRY in the true form and only create the new wiring to Magento 2 or 3 or 4. Magento will last for ever you know!
+^ The idea of the naked module is to create code that is completely unaware that it will be applied within a Magento application. This would mean that it can also be applied to a new version of Magento with a greatly reduced amount of re-work. We get to apply DRY in the true form and only create the new wiring to Magento 2 or indeed 3.
+
+^ The code you have built to solve the problem at an abstract level can be utilised in so many more places.
+
+^ You can also draw code in from other frameworks and projects. You first step to solving a problem may not be to break out your code ditor and start typing.
 
 ---
 
@@ -227,7 +235,9 @@ the action of using something again: the ballast was cleaned ready for reuse.
 
 ![original](images/AS-black-bg.png)
 
-# [fit] Ephemeralisation
+# [fit] Ephemeralization
+
+^ What is Ephemeralization? It is the ability of technological advancement to do "more and more with less and less until eventually you can do everything with nothing". Nothing may be the extreme but the message is clear from my perspective. To be a responsible engineer you should be minimising the effort you expend to solve a problem, minimising the keystrokes to create the quality solution.
 
 ---
 
@@ -258,7 +268,7 @@ the action of using something again: the ballast was cleaned ready for reuse.
 
 ^ Smaller more focused modules and components are more portable and more reusable. This should be a familiar principle. It is the principle upon which unix systems are based and other languages and platforms have got this right also e.g. node.js, python.
 
-^ Building on the physics anecdote then objects with less mass have less inertia and it is much easier to influence their path. Making them much more flexible and usable in unplanned contexts.
+^ Building on the physics analogy then objects with less mass have less inertia and it is much easier to influence their path. Making them much more flexible and usable in unplanned contexts.
 
 ---
 
